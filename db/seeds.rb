@@ -5,3 +5,11 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+10.times do |n|
+  name = "#{Faker::Hacker.adjective.capitalize} #{Faker::Creature::Animal.name.capitalize}"
+  email = "#{name.sub(/ /, '_').downcase}#{n}@example.com"
+  Band.create!( name:       name,
+                email:      email)   
+end
+

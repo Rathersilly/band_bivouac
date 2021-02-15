@@ -1,5 +1,6 @@
 class StaticPagesController < ApplicationController
   def home
+    @bands = Band.all
   end
 
   def help

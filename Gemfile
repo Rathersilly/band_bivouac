@@ -29,6 +29,10 @@ gem 'faker', '2.15.1'
 gem 'carrierwave',              '2.1.1'
 gem 'mini_magick',              '4.11.0'
 
+# required for bootsnap and others for tests to work
+gem 'rexml'
+
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
