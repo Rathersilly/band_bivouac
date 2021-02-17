@@ -1,5 +1,8 @@
 <p id="notice"><%= notice %></p>
 
+<%= image_tag(@band.band_art, size: "300x300", alt: "band_art") %>
+      
+
 <p>
   <strong>Name:</strong>
   <%= @band.name %>
@@ -12,3 +15,15 @@
 
 <%= link_to 'Edit', edit_band_path(@band) %> |
 <%= link_to 'Back', bands_path %>
+
+<div class="album_container">
+  <% @band.albums.each do |album| %>
+    <div class="album_img">
+
+    
+      <%= image_tag(album.album_art, size: "300x300", alt: "album_art") %>
+    </div>
+  <% end %>
+
+
+</div>

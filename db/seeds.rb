@@ -12,15 +12,15 @@ band = Band.create!( name: bandname,
 band_media_path = Rails.root.join("media",
                                 bandname.gsub(/ /, "_"))
 
-band_media_path.children.each do |album_dir|
-  next unless File.directory?(album_dir)
-  album = band.albums.create!(name: album_dir.basename, release_date: Time.zone.now)
-  band_media_path.join(album_dir).children.each do |song|
-
-    album.songs.create!(name: song.basename) if song.to_s.include?("fake")
+band_media_path.children.each do |band_child|
+  band.update(band_art: band_child.to_s) if band_child.extname == ".png"
+  next unless File.directory?(band_child)
+  album = band.albums.create!(name: band_child.basename, release_date: Time.zone.now)
+  band_media_path.join(band_child).children.each do |album_child|
+    album.update(album_art: album_child.to_s) if album_child.extname == ".png"
+    album.songs.create!(name: album_child.basename) if album_child.to_s.include?("fake")
   end
-
-        
+         
 end
 
 
