@@ -9,7 +9,7 @@
 bandname = "Neural Mammoth Motivator"
 band = Band.create!( name: bandname,
               email: "nmm@example.com")
-band_media_path = Rails.root.join("media",
+band_media_path = Rails.root.join("app/assets/media",
                                 bandname.gsub(/ /, "_"))
 
 band_media_path.children.each do |band_child|

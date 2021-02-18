@@ -19,9 +19,10 @@ module BandBivouac
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
 
-    config.logger = Logger.new(STDOUT)
+    # config.logger = Logger.new(STDOUT)
 
-    config.assets.paths << Rails.root.join("media/Neural_Mammoth_motivator")
+    # This works ok
+    # config.assets.paths << Rails.root.join("media")#/Neural_Mammoth_Motivator")
 
   end
 end
