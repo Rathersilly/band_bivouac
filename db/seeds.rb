@@ -9,15 +9,24 @@
 bandname = "Neural Mammoth Motivator"
 band = Band.create!( name: bandname,
               email: "nmm@example.com")
-band_media_path = Rails.root.join("app/assets/media",
+band_media_path = Rails.public_path.join("media",
                                 bandname.gsub(/ /, "_"))
+# need band_art to be media/band_name
+
+# need album_art to be mdia/band_name/albumname
 
 band_media_path.children.each do |band_child|
-  band.update(band_art: band_child.to_s) if band_child.extname == ".png"
+  if band_child.extname == ".png"
+    band_art = "/" + band_child.relative_path_from(Rails.public_path).to_s
+    band.update(band_art: band_art)
+  end
   next unless File.directory?(band_child)
   album = band.albums.create!(name: band_child.basename, release_date: Time.zone.now)
   band_media_path.join(band_child).children.each do |album_child|
-    album.update(album_art: album_child.to_s) if album_child.extname == ".png"
+    if album_child.extname == ".png"
+      album_art = "/" + album_child.relative_path_from(Rails.public_path).to_s
+      album.update(album_art: album_art) 
+    end
     album.songs.create!(name: album_child.basename) if album_child.to_s.include?("fake")
   end
          
