@@ -3,6 +3,7 @@ html {
   height: 100%;
   margin: 0;
   padding: 0;
+  color: white;
   background-color: yellow;
 }
 body {
@@ -31,11 +32,16 @@ header {
   display: flex;
   align-items: center;
   height: 100%;
+  margin-left: 100px;
+  text-decoration: none;
+}
+.nav_lhs:visited {
+  color: white;
+
 }
 .nav_lhs img {
   height: 50px;
   width: 50px;
-  margin-left: 100px;
 }
 .nav_lhs > * {
   margin-left: 20px;
@@ -70,6 +76,46 @@ header {
   
   background-color: lightslategrey;
 }
+
+.band_container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  column-gap: 10px;
+  row-gap: 10px;
+  padding: 20px;
+  /*margin-left: 20px;
+  margin-right: 20px;*/
+  margin-bottom: auto;
+  max-width: 75%;
+  color: white;
+  font-size: 16px;
+  
+}
+.band_link {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+
+}
+.band_link:visited {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+
+}
+.band_name {
+  margin: 5px;
+  font-size: 20px;
+}
+/*
+.band_name {
+  color: white;
+  text-decoration: none;
+}
+.band_name:visited {
+  color: white;
+  text-decoration: none;  
+}*/
 
 
 /* Footer */

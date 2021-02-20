@@ -1,9 +1,9 @@
 <header class="navbar" >
-  <div class="nav_lhs">
+  <%= link_to(root_path, class: "nav_lhs") do %>    
     <!--<img src="app/assets/images/bb_v4.png" alt="logo">-->
     <%= image_tag 'bb_v4.png' %>
     <h1>band bivouac</h1>
-  </div>
+  <% end %>
   <ul class="nav_rhs">
     <li>Sign up</li>
     <li>Log in</li>
