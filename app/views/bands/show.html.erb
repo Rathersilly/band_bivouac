@@ -1,48 +1,35 @@
 <p id="notice"><%= notice %></p>
 
-<%= image_tag(@band.band_art, alt: "band_art") %>
 <!--<%# image_tag(image_path("mmg.png"), alt: "band_art") %>-->
 <%# image_tag("image_sub/mmgimgsub.png", alt: "band_art") %>
 <%# image_tag("mmgimg.png", alt: "band_art") %>
-
 <%# image_tag("/media/nmm/pub-media-nmm.png", alt: "band_art") %>
 
 <%# image_tag("pub-media-nmm.png", alt: "band_art") %>
-
-
 <%# image_tag(Rails.root.join("app/assets/images/image_sub/mmgimgsub.png"), alt: "band_art") %>
 
-
-<!--
-
-
-<%# image_tag("mmgimg.png", alt: "band_art") %>
-
-
-
-
--->
-      
-
+<aside class="bio">
+  <%= image_tag(@band.band_art, size: "200x200", alt: "band_art") %>
 <p>
   <strong>Name:</strong>
   <%= @band.name %>
 </p>
-
 <p>
   <strong>Email:</strong>
   <%= @band.email %>
 </p>
-
 <%= link_to 'Edit', edit_band_path(@band) %> |
 <%= link_to 'Back', bands_path %>
+
+</aside>
+
 
 <div class="album_container">
   <% @band.albums.each do |album| %>
     <div class="album_img">
 
     
-      <%= image_tag(album.album_art, size: "300x300", alt: "album_art") %>
+      <%= image_tag(album.album_art, size: "200x200", alt: "album_art") %>
     </div>
   <% end %>
 

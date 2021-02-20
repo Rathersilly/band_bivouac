@@ -4,4 +4,21 @@
 
 .album_container {
   display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  column-gap: 10px;
+  row-gap: 10px;
+  padding: 20px;
+  /*margin-left: 20px;
+  margin-right: 20px;*/
+  margin-bottom: auto;
+  max-width: 75%;
+}
+
+.bio {
+  float: right;
+  margin: 20px;
+}
+.album_img {
+  margin: 0;
+
 }

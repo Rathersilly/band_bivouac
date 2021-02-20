@@ -7,10 +7,12 @@
 
   <body>
     <%= render 'layouts/header' %>
-    <div class="main_body">
-    <%= yield %>
+    <div class="body_column">    
+      <%= yield %>
+      
+        
     </div>
-    <div class="params"><%= params.inspect %></div>
     <%= render 'layouts/footer' %>
+
   </body>
 </html>
