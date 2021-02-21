@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   resources :bands
+  resources :albums, only: [:show]
+  
   root 'static_pages#home'
   #root 'bands#index'
   get 'static_pages/home'

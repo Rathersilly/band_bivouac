@@ -1,0 +1,13 @@
+<%= render 'bands/bio' %>
+
+<h1><%= @album.name %></h1>
+<p>by</p><%= link_to("#{@band.name}", band_path(@band.id)) %>
+<%# audio_tag("asdf.mp3", controls: true %>
+<h3>Audio player goes here</h3>
+<h3>Purchase info goes here<h3>
+<% @album.songs.each_with_index do |song, i| %>
+  <p>play</p> <%= "#{i}. #{song.name}" %>
+<% end %>
+<div class="release_date">
+  <p>released <%= @album.release_date %></p>
+</div>

@@ -1,13 +1,11 @@
 
-<div class="band_container">
+<div class="bands_container">
   <% @bands.each do |band| %>
-    <%= link_to(band_path(band.id), class: "band_link") do %>
-    
-      <%=image_tag(band.band_art, size: "200x200", alt: "band_art", class: "band_img") %>
-      <p class="band_name"><%= band.name %></p>
-    <% end %>
-  
-
+      <%= link_to(band_path(band.id), class: "band_link") do %>
+      
+        <%=image_tag(band.band_art, size: "200x200", alt: "band_art", class: "band_img") %>
+        <p class="band_name"><%= band.name %></p>
+      <% end %>  
 
   <% end %>
 </div>

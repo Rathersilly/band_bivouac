@@ -1,0 +1,14 @@
+<aside class="bio">
+  <%= image_tag(@band.band_art, size: "200x200", alt: "band_art") %>
+<p>
+  <strong>Name:</strong>
+  <%= @band.name %>
+</p>
+<p>
+  <strong>Email:</strong>
+  <%= @band.email %>
+</p>
+<%= link_to 'Edit', edit_band_path(@band) %> |
+<%= link_to 'Back', bands_path %>
+
+</aside>
